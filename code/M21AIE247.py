@@ -9,6 +9,8 @@ def _check_if_well_formed_(inp_str: str):
     operators="~&>|"
     alloperators="!~&>|"
     special_characters = "@#$%^*()-+?_=,</"
+    if not inp_str or inp_str.isspace() or len(inp_str)==0:
+        return "Not Well Formed Formula" 
     if any(c in special_characters for c in inp_str):
         return "Not Well Formed Formula" 
     if inp_str[0] in operators:
